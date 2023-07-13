@@ -1,0 +1,11 @@
+@using Estoque.Models
+@{
+    if (TempData.ContainsKey("mensagem"))
+    {
+        var Mensagem = MensagemModel.Desserializar(TempData["mensagem"]?.ToString() ?? "");
+        <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
+            @Mensagem.Texto
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+}
